@@ -1,0 +1,10 @@
+# Local test artwork — not for publication
+artpiece/*
+!artpiece/.gitkeep
+
+# Local critique session outputs — not for publication
+sessions/*
+!sessions/.gitkeep
+
+# macOS
+.DS_Store
