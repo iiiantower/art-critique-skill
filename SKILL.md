@@ -29,39 +29,135 @@ When an association does come, **say it in complete sentences that show your rea
 ## Critique Methodology - FOLLOW THIS FLOW
 
 **Setup (once per session).** Recall who you are — your personality and recent experience.
-If this is a new session, create a session folder in the current working directory (e.g.
-`art-critique-sessions/<date>_<name>/`), or in a location the artist specifies — do NOT write
-inside this skill's own folder, which may be read-only. State the path in the chat, and copy
-the artpiece files into it. Copy this skill's `references/session-notes-template.md` into the
-folder as your single living `notes.md`. The notes have an **AGENDA block at the top** (the running
-to-do list you read each round) and per-round blocks below; **keep updating both in real
-time through every phase** (see the per-round loop in Phase 2). At the very end, this file is
-what you hand to the artist.
+
+**New session vs continue.** Before creating anything, decide:
+- **Continue** — the artist is resuming an *existing* critique in this chat (or names a prior
+  session folder). Re-open that folder's `notes.md`; do not create a new folder.
+- **New session** — a fresh critique (including another round on the same work the same day).
+  Always create a **new folder** with a unique name (below). Never copy the template over an
+  existing `notes.md`.
+
+**Session folder naming (unique per session).** Under the working directory (default
+`art-critique-sessions/`), create:
+
+`art-critique-sessions/<YYYY-MM-DD>_<work-slug>_<HHMMSS>/`
+
+- `<YYYY-MM-DD>` — session start date (local date is fine; be consistent).
+- `<work-slug>` — short ASCII from the work title or main filename (lowercase, hyphens,
+  no spaces; e.g. `ohdyssey`, `mountain-study`). Max ~40 characters.
+- `<HHMMSS>` — session start time (24h, no colons) so two sessions the same day on the same
+  work get different folders (e.g. `143022`, `161530`).
+
+If that exact path already exists, append `-2`, `-3`, etc. State the full path in the chat.
+
+Example:
+`art-critique-sessions/2026-06-07_ohdyssey_143022/`
+`art-critique-sessions/2026-06-07_ohdyssey_161530/` ← second session, same work, same day
+
+Do NOT write inside this skill's own folder (may be read-only). Copy artpiece files into the
+session folder. Copy `references/session-notes-template.md` into the folder as your single
+living **`notes.md`** (one notes file per session folder — uniqueness comes from the folder,
+not from renaming notes). Fill the session metadata block at the top (session id, slug, times).
+
+**Optional traceability index.** After creating a new session folder, append one line to
+`art-critique-sessions/_index.md` (create if missing):
+
+`<YYYY-MM-DD> <HH:MM> | <session folder name> | <work title or one-line note>`
+
+The notes have an **AGENDA block at the top** (the running to-do list you read each round)
+and per-round blocks below; **keep updating both in real time through every phase** (see the
+per-round loop in Phase 2). At the very end, this file is what you hand to the artist.
+
+**Input limits (check before Perceive).** If the artist exceeds these, say so politely and
+ask them to trim, split into another session, or send a representative subset — do not silently
+process an oversized dump.
+
+| Input | Soft limit per session | If over limit |
+|-------|------------------------|---------------|
+| Images | up to **5** files, each ideally under **10 MB** | Ask which views matter most, or split sessions |
+| Video | **1** primary clip; **≤ 5 min** work-reel, **≤ 3 min** demo+talk | Shorter cut, segment timestamps, or stills + text |
+| Text | **~8,000 words** | Excerpt or summary of the part to crit |
+| Audio | **1** track, **≤ 10 min** | Shorter clip or transcript |
+
+If there is a good reason to exceed a limit, note the exception in `notes.md` and state what
+you could not fully take in.
 
 **Perceive the work (whatever its medium).** Before Phase 1, make the work actually
 inspectable, and note in `notes.md` which medium it is and how you took it in:
+
+**Classify video first (do not assume demo+talk).** The same upload can be either the **work
+itself** or a **walkthrough of another work**. Before choosing an ingest path:
+
+1. Read the artist's message (did they say "walk you through", "WIP", "let me explain"?).
+2. Check the audio track if you can: continuous **explanatory speech** while showing something
+   else → likely `demo_video_with_narration`; speech is **part of the work** (dialogue, score,
+   performance) or **absent** → likely `work_video`.
+3. If still unclear after a quick look/listen, **ask one question** before Phase 1: "Is this
+   clip the finished piece, or are you showing and explaining the work on camera?"
+
+| `input_type` | Meaning | Ingest path |
+|--------------|---------|-------------|
+| `work_video` | The video IS the artwork (film, animation, performance recording, etc.) | **Ingest: work video** |
+| `demo_video_with_narration` | Artist films themselves presenting/explaining another work | **Ingest: demo+talk video** |
+
 - **Image** — view it directly.
 - **Text** — read it directly.
-- **Audio** — listen if you can; otherwise, if you have a shell or transcription capability,
-  transcribe it, and note the non-verbal qualities too (tone, tempo, silence, texture of sound).
-- **Video** — if you have a shell or media capability, extract keyframes and transcribe the
-  audio track, then treat it as an image-sequence plus sound (it reuses the visual and
-  time-based resources together).
+- **Audio** — listen if you can; otherwise transcribe if you have the capability; note
+  non-verbal qualities (tone, tempo, silence, texture).
 - **Installation / performance / mixed** — combine the above for each element.
-Be honest about limits (e.g. "read from frames, may miss motion/duration"). If you lack the
-capability to perceive a medium (no shell, no transcription, etc.), say so and ask the artist
-for a transcript or description rather than inventing one — this follows the "be real, ask
-first" principle.
+
+**How to take in video (prefer motion, not only frames).** Order of preference:
+
+1. **Watch/listen to the full clip natively** when your runtime can — best for timing, motion,
+   and sound.
+2. **If you must sample:** transcribe audio; add keyframes only as a **fallback** for vision,
+   not the primary understanding. Cap keyframes (~8–12 for ≤3 min, ~12–20 for ≤5 min). Sample
+   start, middle, end, every ~5–10s, and **extra frames where motion or cuts change** if you can.
+3. **Always add motion notes** in `notes.md`: what **changes between** sampled points (movement,
+   transformation, pacing, sync) — and mark **"motion uncertain"** where frames alone cannot
+   tell. For dynamic work, seed the AGENDA with **time/motion/process** and ask early whether
+   the unfolding matters more than any single frame.
+
+If you lack video/transcription capability, say so; ask for stills + short text or a transcript.
+Do not invent unseen details — "be real, ask first."
+
+**Ingest: work video** (when the clip IS the artwork). Fill **Ingest — work video** in the
+session template before Phase 1:
+
+1. Metadata: `input_type: work_video`, duration, ingest method, limits (especially if frame-based).
+2. **What unfolds over time** — shape across duration; pacing; what changes (not just one frame).
+3. **Sound** — diegetic speech/music/silence as part of the work (not walkthrough narration).
+4. **Keyframe table** (if used) + **motion notes between frames**.
+5. **Uncertain** — motion/timing you could not verify.
+
+Use `time-based-media.md` (+ `four-steps.md` for strong still moments). Do not use
+`demo-walkthrough.md` unless a separate explanatory track is clearly present.
+
+**Ingest: demo+talk video** (when the artist shows AND explains the work on camera). Fill
+**Ingest — demo video** in the session template before Phase 1:
+
+1. Metadata: `input_type: demo_video_with_narration`, duration, ingest method, limits.
+2. **Dual-track** — Visual (keyframes, observed only); audio (transcript, **Artist said**);
+   alignment (speech ↔ image). Include **motion notes between frames** if not watching natively.
+3. **Three layers** — Work, Presentation, Speech; plus **Uncertain / could not verify**.
+
+**INVARIANT (any video ingest):** Do not seed the AGENDA or enter Phase 2 until the matching
+Ingest section is filled. Cite source in dialogue. For demo video: narration is their
+perspective; validate speech/image gaps early. Associations hook to a **specific moment, frame,
+or quoted line**, not a summary alone.
 
 ### Phase 1 — First reading, then build the agenda
 1. Look/read/listen deeply, then take **first-reading notes** using a framework. Pick the
    framework that fits the medium: `references/note-frameworks/four-steps.md` for visual/
-   static work, `references/note-frameworks/time-based-media.md` for audio/video/performance.
-   Frameworks are **pluggable** — you may swap in another method, including one the artist
-   brings (see `note-frameworks/README.md`). Note which one you used. These notes are to find
-   your feelings and footing, not to answer everything; keep them short.
-2. From those notes, fill the **AGENDA** block at the top of `notes.md` with the aspects
-   worth a round each — concept, form, material, color, composition, context, and so on.
+   static work, `references/note-frameworks/time-based-media.md` for audio/video/performance,
+   `references/note-frameworks/demo-walkthrough.md` when the input is a **demo video with
+   narration** (after Ingest is complete). Frameworks are **pluggable** — you may swap in
+   another method, including one the artist brings (see `note-frameworks/README.md`). Note
+   which one you used. These notes are to find your feelings and footing, not to answer
+   everything; keep them short.
+2. From those notes (and Ingest, if video), fill the **AGENDA** block at the top of
+   `notes.md` with the aspects worth a round each — concept, form, material, color,
+   composition, context, time/motion, work vs. presentation, speech vs. image, and so on.
    The AGENDA is your running to-do list and single source of truth for the dialogue.
 
 ### Phase 2 — The per-round dialogue loop (questioning + associating interleaved)

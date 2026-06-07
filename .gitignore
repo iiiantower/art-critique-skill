@@ -6,3 +6,5 @@ sessions/*
 
 # macOS
 .DS_Store
+
+.gitignore

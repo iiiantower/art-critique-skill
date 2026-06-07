@@ -7,6 +7,9 @@ its name at the top of the session notes.
 - **Default for visual/static work:** `four-steps.md` (Describe → Analyze → Interpret → Judge).
 - **For time-based work (audio/video/performance):** `time-based-media.md` (same spine, prompts
   attend to time, sound, and motion). A video can use both, since it has still frames and sound.
+- **For demo video with narration** (artist records themselves showing + explaining the work):
+  `demo-walkthrough.md` — after Ingest is complete; separates work, presentation, speech, and
+  gap. Often used together with `four-steps.md` and/or `time-based-media.md`.
 - **Other options** you may use instead if they fit the work or the artist better:
   - Feldman's method (a fuller version of describe/analyze/interpret/judge)
   - Terry Barrett's "principles for interpreting art" (interpretation-led)

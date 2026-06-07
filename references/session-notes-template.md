@@ -1,8 +1,15 @@
 # Critique Notes — <artpiece name>
 
-- Session folder: <path>
+- Session id: `<YYYY-MM-DD>_<work-slug>_<HHMMSS>` (matches folder name)
+- Session folder: `<full path>`
+- Work slug: `<work-slug>`
+- Artpiece: <main filename(s)>
+- Started: `<YYYY-MM-DD>` `<HH:MM>` (local)
+- Continues session: <none | path to prior session folder>
+- Input type: <image | text | audio | work_video | demo_video_with_narration | mixed | ...>
+- Ingest method: <native full view / keyframes + transcript / transcript only / direct view>
+- Ingest limits: <honest limits>
 - Note framework: four-steps (or whichever you chose)
-- Started: <date>
 
 This is ONE living file, updated in real time. At the end (when the artist says it's over),
 hand the whole file back to them.
@@ -13,6 +20,9 @@ hand the whole file back to them.
 This small block is the agenda and single source of truth for what to do next. Re-read it
 each round; you do NOT need to re-read the whole file each round (see the loop in SKILL.md).
 
+For **work_video** or **demo_video_with_narration**, do NOT fill this block until the
+matching **Ingest** section below is complete.
+
 - Round now: <n>
 - Aspects still to open (one per round):
   - [ ] <aspect>
@@ -22,6 +32,66 @@ each round; you do NOT need to re-read the whole file each round (see the loop i
 - Associations so far — `title — status: voiced R# / parked: <why>`:
   - <none yet>
 - Thread to pick up next: <one line>
+
+---
+
+## Ingest — work video (fill BEFORE Phase 1 when the clip IS the artwork)
+Skip if input is not `work_video`.
+
+### What unfolds over time
+<Shape across duration; pacing; what changes — not reducible to one frame>
+
+### Sound (part of the work, if any)
+<Diegetic speech, music, silence — not walkthrough narration>
+
+### Keyframes (if sampled — observed only)
+| Time | What is visible |
+|------|-----------------|
+| ~0:00 | |
+
+### Motion notes (between frames — required if not watching natively)
+| From → To | What changes (movement, cut, pacing, sync) | Certainty |
+|-----------|---------------------------------------------|-----------|
+| ~0:00 → ~0:10 | | certain / uncertain |
+
+### Uncertain / could not verify
+<Especially motion, timing, sync>
+
+---
+
+## Ingest — demo video (fill BEFORE Phase 1 when input is demo + narration)
+Skip if input is not `demo_video_with_narration`.
+
+### Keyframes (visual track — observed only)
+| Time | What is visible on screen (facts only) |
+|------|----------------------------------------|
+| ~0:00 | |
+
+### Motion notes (between frames — required if not watching natively)
+| From → To | What changes on screen | Certainty |
+|-----------|------------------------|-----------|
+| ~0:00 → ~0:10 | | certain / uncertain |
+
+### Transcript (audio track — Artist said)
+| Time | What the artist said (+ tone/pause if notable) |
+|------|--------------------------------------------------|
+| ~0:00 | |
+
+### Speech ↔ image alignment
+- Align:
+- Diverge:
+
+### What I see in the work (observed)
+<The work itself — from frames, not from narration>
+
+### How it is shown (presentation — camera, light, demo gesture)
+<How the artist presents/films it>
+
+### What the artist said (stated — key quotes)
+<Their perspective, with timestamps>
+
+### Uncertain / could not verify
+<Anything not grounded in a frame, motion note, or quoted line>
 
 ---
 
@@ -40,8 +110,7 @@ After each round, append a block here AND update the AGENDA above.
 - My feeling/observation + the question I asked:
 - **The artist's opinion / answer (record this EVERY round):**
 - Association (only if one fired) — `voiced this turn? yes / parked: <why>`:
-  <in full sentences — what it reminded me of, why it's the same thing in THIS work, and the
-  question it opened. Note the source/card.>
+  <Hook to a specific moment, frame, or quoted line for video. Note source/card.>
 - What this opened / where to go next:
 - Agenda updated: checked off <...>, added <...>
 
